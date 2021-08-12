@@ -1,0 +1,20 @@
+
+<view class="charge-main">
+
+  <view  class="charge-content" wx:for="{{ content }}" wx:for-item="first">
+    <view class="charge-station">
+      <text class="charge-site">{{ first.site }}</text>     
+      <view class="charge-use">{{ first.use }}</view>
+    </view>
+    <view class="charge-status">
+
+      <view wx:for="{{ first.array }}" wx:for-item="array">
+
+        <view class="item-site">
+          <view class="point">
+        </view> 
+        {{ array.status }} | {{ array.site }}</view>
+      </view>
+    </view>
+  </view>
+</view>

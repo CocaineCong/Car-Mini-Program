@@ -1,0 +1,229 @@
+div {
+  display: block;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+a,
+abbr,
+body,
+cite,
+dd,
+dl,
+dt,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+iframe,
+input,
+li,
+object,
+ol,
+p,
+pre,
+span,
+ul {
+  font-family: 'Microsoft YaHei', 'SF Pro Display', Roboto, Noto, Arial, 'PingFang SC', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul,
+li,
+ol,
+dl,
+dt,
+dd {
+  list-style: none;
+}
+
+div,
+figure,
+footer,
+header,
+hgroup,
+html,
+iframe,
+img,
+mark,
+menu,
+nav,
+object,
+section,
+span,
+summary,
+table,
+tbody,
+td,
+tfoot,
+thead,
+tr,
+video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.my_msg_list {
+  width: 100%;
+  height: auto;
+  /* min-height: 100%; */
+  /* margin-bottom: 20px; */
+}
+
+.my_msg_list_view {
+  position: relative;
+  /* margin-left: 200px; */
+  background-color: #fff;
+  padding: 24px 16px;
+  /* -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.28); */
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.28); */
+  /* min-height: 520px; */
+  /* box-sizing: border-box; */
+}
+
+.my_msg_list_box {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.my_msg_list_con {
+  /* margin-top: 30rpx; */
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.my_msg_list_title {
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  color: #3d3d3d;
+  margin-bottom: 8px;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+  box-sizing: border-box;
+}
+
+.fr {
+  float: right !important;
+  display: inline-block;
+  color: #4a90e2;
+}
+
+.line {
+  display: inline-block;
+  height: 12px;
+  margin: 2px 12px;
+  border-right: 1px solid #979797;
+}
+
+.msg_list {
+  margin-top: 30rpx;
+  padding: 0 0 0 15px;
+  min-height: 370px;
+  box-sizing: border-box;
+}
+
+.msg_list_ul {
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  font-size: 14px;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+.msg_list_ul_li {
+  position: relative;
+  padding: 16px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.msg_type {
+  display: inline-block;
+  margin-top: 10rpx;
+  margin-right: 30rpx;
+  height: 20px;
+  line-height: 18px;
+  padding: 0 5px;
+  color: #4d4d4d;
+  font-size: 12px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  vertical-align: top;
+}
+
+.data-time{
+  width: 150rpx;
+  height: auto;
+  /* border: black 1px solid; */
+}
+
+.msg_info_box {
+  width: 79%;
+  color: #4d4d4d;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.msg_title {
+  display: inline-block;
+  width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.options-f {
+  width: 16%;
+  height: 20px;
+  margin: 0;
+  margin-top: -20px;
+  padding: 0;
+}
+
+.msg_delete {
+  width: 10px;
+  height: 10px;
+  float: right;
+}
+
+.msg_content {
+  margin-top: 15px;
+  margin-bottom: 16px;
+  padding: 15px;
+  background-color: #f7f7f7;
+  font-size: 14px;
+  color: #4d4d4d;
+  line-height: 22px;
+}
+
+.page-box {
+  width: 100%;
+  margin: 32px 0 20px;
+  text-align: center;
+  border-top-color: initial;
+  border-right-color: initial;
+  border-bottom-color: initial;
+  border-left-color: initial;
+}

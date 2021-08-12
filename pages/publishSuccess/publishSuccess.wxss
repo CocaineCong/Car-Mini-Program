@@ -1,0 +1,30 @@
+/* pages/publishSuccess/publishSuccess.wxss */
+
+.container{
+  height: 300rpx;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .title{
+  font-size: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container .choose{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.container .choose .btn{
+  padding: 10rpx;
+  border: 1px solid #e98778;
+  border-radius: 10rpx;
+  background-color: #e98778;
+  font-size: 30rpx;
+}

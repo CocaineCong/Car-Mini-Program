@@ -1,0 +1,158 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "授权操作",
+          "pathName": "pages/auth/auth",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "主页面",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 2,
+          "name": "用户个人信息页面",
+          "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "反馈页面",
+          "pathName": "pages/join/join",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "社区页面",
+          "pathName": "pages/social/social",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "聊天页面",
+          "pathName": "pages/message/message",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "绑定手机",
+          "pathName": "pages/bindPhone/bindPhone",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 8,
+          "name": "发消息",
+          "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 10,
+          "name": "展示车",
+          "pathName": "pages/car/car",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "BindCar",
+          "pathName": "pages/bindCar/bindCar",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "发布成功",
+          "pathName": "pages/publishSuccess/publishSuccess",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "页面详情",
+          "pathName": "pages/newsDetail/newsDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "好友页面",
+          "pathName": "pages/friends/friends",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 14,
+          "name": "聊天",
+          "pathName": "pages/message/chat/chat",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/SystemInfo/SystemInfo",
+          "pathName": "pages/SystemInfo/SystemInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/join/join",
+          "pathName": "pages/join/join",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/report/report",
+          "pathName": "pages/report/report",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/reports/reports",
+          "pathName": "pages/reports/reports",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/message/message",
+          "pathName": "pages/message/message",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/incharge/incharge",
+          "pathName": "pages/incharge/incharge",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

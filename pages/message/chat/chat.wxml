@@ -1,0 +1,112 @@
+<import src="../../../modules/chat-input/chat-input.wxml" />
+<view class="chat" style="height: {{height}}px">
+	<scroll-view scroll-y='true' class="chat-content" style="height: {{chatHeight}}px">
+		<view>
+			<!-- 默认展示 -->
+			<view class="chat-content-list-time">{{normalDataTime}}</view>
+			<view class="chat-content-list ">
+				<image class="chat-content-list-avatar " src="{{ userAvatar }}"></image>
+				<view class="chat-content-list-content" bindlongtap="delMsg" data-index="{{index}}">
+					<view class="chat-content-list-msg">
+						<text selectable='true'>CPDD！</text>
+					</view>
+					<view class="isRead">已读</view>
+				</view>
+			</view>
+		</view>
+		<view>
+
+			<!-- 默认展示  语音 -->
+			<!-- <view class="chat-content-list-time">{{normalDataTime}}</view>
+			<view class="chat-content-list right">
+				<image class="chat-content-list-avatar " src="../../../images/chat/voice/speak.png"></image>
+				<view class="chat-content-list-content" bindlongtap="delMsg" data-index="{{index}}">
+					<view class="chat-content-list-voice">
+						<text>5s</text>
+						<image class='chat-voice-img' src='../../../images/chat-voice-img@3x.png'></image>
+						<view class='over-read-tip active'></view>
+					</view>
+				</view>
+			</view> -->
+
+		</view>
+		<view wx:for="{{wxchatLists}}" wx:key="{{index}}">
+			<!-- ↑ wx:for="{{wxchatLists}}" wx:key="{{index}}" -->
+			<view class="chat-content-list-time">{{item.dataTime}}</view>
+			<view class="chat-content-list right">
+				<image class="chat-content-list-avatar " src="{{ userAvatar }}"></image>
+				<view class="chat-content-list-content " bindlongtap="delMsg" data-id="{{ user_id }}">
+
+					<!--  文字信息模板  ↓ hidden="{{!(item.msg_type === 'text')}}" -->
+					<view bindtap="addText">
+						<view class="chat-content-list-msg" hidden="{{!(item.msg_type === 'text')}}">
+							<text selectable='true'>{{ item.textMessage }}</text>
+							<view class='over-read-tip '></view>
+						</view>
+						<view wx:if="{{ IsRead == false}}">
+							<view class="noRead">未读</view>
+					</view>
+					<view wx:if="{{ IsRead == true}}">
+							<view class="isRead">已读</view>
+					</view>
+					</view>
+
+					<!--  语音信息模板  ↓   hidden="{{!(item.msg_type === 'voice')}}" -->
+					<view class="chat-content-list-voice {{item.voiceTime<10?'length1':'length3'}}" bindtap='playRecord'
+						hidden="{{!(item.msg_type === 'voice')}}">
+						<text class=''>{{item.voiceTime}}s</text>
+						<image class='chat-voice-img' src='../../../images/chat-voice-img@3x.png'></image>
+						<view class='over-read-tip '></view>
+					</view>
+
+					<!--  图片信息模板  ↓   -->
+					<view class="chat-content-list-img" hidden="{{!(item.msg_type === 'img')}}">
+						<image src="{{item.sendImgSrc}}" mode="aspectFill" bindtap='seeBigImg' data-index="{{index}}"></image>
+						<!-- <view class='chat-content-list-msg-del' data-index="{{index}}" bindtap="delMsg">X</view> -->
+						<view class='over-read-tip '></view>
+					</view>
+				</view>			
+			</view>
+
+
+			<view class="chat-content-list" wx:if="{{ ReplayInfo!='' }}">
+				<image class="chat-content-list-avatar " src="{{ userAvatar }}"></image>
+				<view class="chat-content-list-content " bindlongtap="delMsg" data-id="{{ user_id }}">
+					<!--  文字信息模板  ↓ hidden="{{!(item.msg_type === 'text')}}" -->
+					<view bindtap="addText">
+						<view class="chat-content-list-msg" hidden="{{!(item.msg_type === 'text')}}">
+							<text selectable='true'>{{ ReplayInfo }}</text>
+							<view class='over-read-tip '></view>
+						</view>
+						<view wx:if="{{ IsRead == false}}">
+							<view class="noRead">未读</view>
+					</view>
+					<view wx:if="{{ IsRead == true}}">
+							<view class="isRead">已读</view>
+					</view>
+					</view>
+					<!--  语音信息模板  ↓   hidden="{{!(item.msg_type === 'voice')}}" -->
+					<view class="chat-content-list-voice {{item.voiceTime<10?'length1':'length3'}}" bindtap='playRecord'
+						hidden="{{!(item.msg_type === 'voice')}}">
+						<text class=''>{{item.voiceTime}}s</text>
+						<image class='chat-voice-img' src='../../../images/chat-voice-img@3x.png'></image>
+						<view class='over-read-tip '></view>
+					</view>
+
+					<!--  图片信息模板  ↓   -->
+					<view class="chat-content-list-img" hidden="{{!(item.msg_type === 'img')}}">
+						<image src="{{item.sendImgSrc}}" mode="aspectFill" bindtap='seeBigImg' data-index="{{index}}"></image>
+						<!-- <view class='chat-content-list-msg-del' data-index="{{index}}" bindtap="delMsg">X</view> -->
+						<view class='over-read-tip '></view>
+					</view>
+				</view>			
+			</view>
+
+
+
+
+
+		</view>
+	</scroll-view>
+	<template is="chat-input" data="{{inputObj:inputObj,textMessage:textMessage,showVoicePart:true}}" />
+</view>

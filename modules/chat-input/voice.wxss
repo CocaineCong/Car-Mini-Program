@@ -1,0 +1,53 @@
+
+
+button{
+    font-size: 32rpx;
+    width:100%;
+    /* margin-top: 15rpx;
+    margin-bottom: 15rpx; */
+    border:1rpx solid #1e1e1e;
+    background-color: #fff;
+    border-radius: 0;
+    height: 54rpx;
+    line-height: 56rpx;
+}
+button::after{
+  border: 0;
+}
+.btn-voice-press{
+    border:1rpx solid #1e1e1e;
+    background-color: #fff;
+    border-radius: 0;
+    height: 54rpx;
+    line-height: 56rpx;
+}
+.btn-voice-press::after{
+  border: 0;
+}
+.voice-status-style{
+    position: absolute;
+    left: 0;
+    bottom: 22rpx;
+    width: 80%;
+    text-align: center;
+    font-size: 24rpx;
+    color: white;
+    padding-top: 5rpx;
+    padding-bottom: 5rpx;
+    margin-left: 10%;
+    border-radius: 10rpx;
+}
+
+.voice-record-git-status-style{
+    position: absolute;
+    left: 0;
+    bottom: 75rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.voice-record-git-size-style{
+    width: 58rpx;
+    height: 10rpx;
+}

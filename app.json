@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/auth/auth",
+    "pages/join/join",
+    "pages/pageopen/pageopen",
+    "pages/index/index",
+    "pages/user/user",
+    "pages/logs/logs",
+    "pages/social/social",
+    "pages/test/test",
+    "pages/message/message",
+    "pages/message/chat/chat",
+    "pages/bindPhone/bindPhone",
+    "pages/publish/publish",
+    "pages/publishSuccess/publishSuccess",
+    "pages/car/car",
+    "pages/bindCar/bindCar",
+    "pages/newsDetail/newsDetail",
+    "pages/friends/friends",
+    "pages/friendInfo/friendInfo",
+    "pages/SystemInfo/SystemInfo",
+    "pages/reports/reports",
+    "pages/incharge/incharge"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "车辆联络平台",
+    "navigationBarTextStyle": "black"
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

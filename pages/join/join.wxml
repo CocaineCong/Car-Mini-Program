@@ -1,0 +1,35 @@
+<view class='bgjoin'>
+  <image class='bg' src='/images/bg.png'></image>
+  <!--卡片  -->
+  <view class='card'>
+    <!--背景  -->
+    <image class='joinbgimg'
+      src='http://img.zcool.cn/community/01756b5add7e92a80120927b3af0d8.jpg@1280w_1l_2o_100sh.jpg'></image>
+    <view class='content'>
+      <!--二维码  -->
+      <image class='joinimg' src='/images/joinimg.png'></image>
+      <!--发布者姓名及ID  -->
+      <text class='jointextbg'>键值对</text>
+      <text class='jointextid'>KeyValueTeam</text>
+    </view>
+    <!--步骤  -->
+    <view class='step'>
+      <view class='stepline'></view>
+      <view class='stepnumber'>
+        <!--步骤一  -->
+        <text class='number1'>1</text>
+        <text class='steptext1'>加入我们</text>
+        <view class='line1'></view>
+        <!--步骤二  -->
+        <text class='number1'>2</text>
+        <text class='steptext1'>发送给文件传输助手</text>
+        <view class='line1'></view>
+        <!--步骤三  -->
+        <text class='number1'>3</text>
+        <text class='steptext1'>回到微信，识别添加即可</text>
+        <view class='line1'></view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,58 @@
+<wxs module="dateUtil" src="../../utils/DataTime.wxs"></wxs>
+
+<view class="menu-view">
+  <view class="item1">
+    <image src="/images/icon/like_collect_icon_show.png"></image>
+    <text>赞和收藏</text>
+  </view>
+  <view class="item1">
+    <image src="/images/icon/visituser_icon_show.png"></image>
+    <text>最近来访</text>
+  </view>
+  <view class="item1">
+    <image src="/images/icon/comment_mention_icon_show.png"></image>
+    <text>评论和@</text>
+  </view>
+</view>
+
+
+<view class="msg-list-vew">
+  <navigator url="/pages/SystemInfo/SystemInfo">
+    <view class="item1">
+      <image class="avatar" src="/images/icon/comment_mention_icon_show.png"></image>
+      <view class="msg">
+        <view class="row">
+          <view class="title">系统消息</view>
+          <view class="date">{{normalDataTime}}</view>
+        </view>
+        <view class="summary">您有新的系统消息了噢~</view>
+      </view>
+    </view>
+  </navigator>
+  <wxs module="m1">
+function format(ts) {
+	var d = getDate(ts*1000)
+	return [d.getFullYear(), d.getMonth()+1, d.getDate()].join('-')
+		+ ' '
+		+ [d.getHours(), d.getMinutes(), d.getSeconds()].join(':')
+}
+module.exports.format = format
+</wxs>
+  <block wx:for="{{ messages }}">
+    <navigator url="/pages/message/chat/chat">
+      <view class="item1">
+        <image class="avatar" src="{{ item.avatar_url }}">
+        </image>
+        <view class="msg">
+          <view class="row">
+            <view class="title">{{ item.user_name }}</view>
+            <!-- <view class="date">{{ m1.format(item.msg.StartTime) }}</view> -->
+            <view class="date">      {{ dateUtil.dateFormat(item.msg.StartTime) }}</view>
+      
+          </view>
+          <view class="summary">{{ item.msg.Content }}</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</view>

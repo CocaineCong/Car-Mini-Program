@@ -1,0 +1,23 @@
+<view class="firend-con">
+<view class='giftListView'>
+ <block wx:for="{{ friendlist }}">
+  <view class='item' wx:key="{{item.id}}">
+   <view class='iconImageView' bindtap="showDetailInfo" data-id="{{ item.id }}">
+    <image class='iconImage' src="{{item.user_avatar}}" mode = 'aspectFit'></image>
+   </view>
+   <view class='productNameView'>
+    <text class='productNameText'>{{item.user_name}}</text>
+   </view>
+   <view class='needScoreView'>
+    <button data-id="{{ item.id }}" bindtap="NoFriendMore" class='needSocreText'>不再关注</button> 
+   </view>
+   <view class='productDesView'>
+    <text class = 'productDesText'>来康康我吧</text>
+    <text class = 'productDesText'>我超甜哒~</text>
+   </view>
+  
+
+  </view>
+ </block>
+</view>
+</view>

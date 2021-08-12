@@ -1,0 +1,78 @@
+<view class='usercenter'>
+	<image class='bg' src='/images/bg.png'></image>
+	<view class='head'>
+		<image class='headphoto'></image>
+		<view class='photobg'>
+			<image class='camera' src='{{ UserInfo.avatar }}'></image>
+		</view>
+	</view>
+</view>
+
+<!--基本信息盒模型  -->
+<view class='basic'>
+	<text class='basictext'>基本信息</text>
+	<!--名字部分  -->
+	<view class='namebox'>
+		<!-- <view class="name-icon-box"> -->
+		<image class='nameicon-left' src='/images/user/me.png'></image>
+		<text class='name'>名字</text>
+		<!-- </view> -->
+		<image class='nameicon' src='/images/righticon.png'></image>
+		<text class='nametext'>{{ UserInfo.user_name }}</text>
+	</view>
+
+
+	<!-- 手机号部分 -->
+	<view class='namebox'>
+		<image class='nameicon-left' src='/images/user/phone.png'></image>
+		<text class='name'>手机号</text>
+		<image class='nameicon' src='/images/righticon.png'></image>
+		<view wx:if="{{ UserInfo.phone == '' }}" placeholder-class='textcolor' class='nametext' type='number'>保密的哦~</view>
+		<view wx:elif="{{ UserInfo.phone != '' }}" placeholder-class='textcolor' class='nametext' type='number'> {{ UserInfo.phone }} </view>
+	</view>
+
+
+	<!-- 邮箱号 -->
+	<view class='namebox'>
+		<view class="btn" plain="true" bindtap="powerDrawer" data-statu="open"></view>
+		<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+		<image class='nameicon-left' src='/images/user/email.png'></image>
+		<text class='name'>邮箱号</text>
+		<image class='nameicon' src='/images/righticon.png'></image>
+		<view wx:if="{{ UserInfo.email=='' }}" placeholder-class='textcolor' class='nametext'>保密的哦~</view>
+		<view wx:elif="{{ UserInfo.email!='' }}" placeholder-class='textcolor' class='nametext'>{{ UserInfo.email }}</view>
+	</view>
+
+	<!-- 亲友数  -->
+	<!-- <view class='namebox'>
+		<image class='nameicon-left' src='/images/user/relative.png'></image>
+		<text class='name'>亲友数</text>
+		<image class='nameicon' src='/images/righticon.png'></image>
+		<view placeholder-class='textcolor' class='nametext' type='number'>1w+</view>
+	</view> -->
+	<!-- 动态  -->
+
+
+	<navigator url="/pages/FriendSocial/FriendSocial?detail={{ UserInfo.id }}">
+		<view class='namebox'>
+			<image class='nameicon-left' src='/images/user/car.png'></image>
+			<text class='name'>他的动态</text>
+			<image class='nameicon' src='/images/righticon.png'></image>
+			<view placeholder-class='textcolor' class='nametext' type='number'></view>
+		</view>
+	</navigator>
+
+
+	<!-- 状态  -->
+	<!-- <view class='namebox'>
+		<image class='nameicon-left' src='/images/user/status.png'></image>
+		<text class='name'>状态</text>
+		<image class='nameicon' src='/images/righticon.png'></image>
+		<view placeholder-class='textcolor' class='nametext' type='number'>在线</view>
+	</view> -->
+
+
+</view>
+
+
+<navigator class='back' url="/pages/message/chat/chat?detail={{ UserInfo.id }}" redirect>与他聊天</navigator>

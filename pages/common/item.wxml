@@ -1,0 +1,77 @@
+<template name="jiefItem1">
+	<!-- List Item begin -->
+	<view class="content-list">
+		<navigator class="item" url="/pages/newsDetail/newsDetail?detail={{ id }}">
+			<view class="top">
+				<view class="cover-img" style="opacity: 1; background-image: url({{picture}});">
+				</view>
+			</view>
+			<view class="info">
+				<view class="title">{{title}}</view>
+				<view class="meta clearfix">
+					<view class="cell left">
+						<view class="bilibili-index-sprite bilibili-index-play">
+							<image src="../../resources/images/play.png"></image>
+						</view>
+						<text>{{ user_name }}</text>
+					</view>
+					<view class="cell left">
+						<view class="bilibili-index-sprite bilibili-index-danmu">
+							<image src="../../resources/images/danmu_32.png"></image>
+						</view>
+						<text>#{{ category_name }}</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+	</view>
+	<!-- List Item end -->
+</template>
+
+
+
+
+<!-- 闲置 -->
+<template name="jiefItem2">
+	<view class="content-list">
+		<navigator class="item" url="/pages/newsDetail/newsDetail?detail={{ id }}">
+			<view class="top">
+				<view class="cover-img" style="opacity: 1; background-image: url({{picture}});">
+				</view>
+			</view>
+			<view class="info">
+				<view class="avatar">
+					<image mode="scaleToFill" src="{{ user_avatar }}"></image>
+				</view>
+				<view class="user">
+					<view class="name text-overflow"># {{ category_name }}</view>
+					<view class="desp text-overflow">{{ title }}</view>
+				</view>
+				<view class="online text-overflow">{{ user_name }}</view>
+			</view>
+		</navigator>
+	</view>
+</template>
+
+
+
+
+
+
+<!-- 亲友圈 -->
+<template name="jiefItem3">
+	<!-- List Item begin -->
+	<view class="content-list bangumi-list">
+		<navigator class="item" url="/pages/newsDetail/newsDetail?detail={{ id }}">
+			<view class="top">
+				<view class="cover-img" style="opacity: 1; background-image: url({{coverImg}});">
+				</view>
+			</view>
+			<view class="info">
+				<view class="bangumi-title text-overflow">{{bangumiTitle}}</view>
+				<view class="bangumi-page text-overflow">{{bangumiPage}}</view>
+			</view>
+		</navigator>
+	</view>
+	<!-- List Item end -->
+</template>

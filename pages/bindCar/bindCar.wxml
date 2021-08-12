@@ -1,0 +1,25 @@
+  <view class="numberInfo">绑定车牌</view>
+
+  <view class="container-car">
+  	<view class="lineHeight" type="number">车牌号:
+  		<input bindinput="watchNum" class='input' value="{{ carNum }}" placeholder='请输入车牌号'></input>
+  	</view>
+  	<view class="lineHeight" type="text">车名称:
+  		<input class='input' bindinput="watchName" placeholder='请输入车名称'></input>
+  	</view>
+  </view>
+
+
+  <view class="weui-uploader">
+  	<view class="img-v weui-uploader__bd">
+  		<view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+  			<image class='weui-uploader__img ' src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+  				<icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+  			</image>
+  		</view>
+
+  		<!-- 用来提示用户上传图片 -->
+  		<view class="weui-uploader__input-box pic" bindtap="chooseImg"> </view>
+  	</view>
+  	<button class="upload-img-btn" bindtap="chooseImg" type='default'>拍照 / 上传</button>
+  </view>

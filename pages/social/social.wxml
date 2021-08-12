@@ -1,0 +1,196 @@
+<!--index.wxml-->
+<import src="../common/item.wxml" />
+
+<view class="wrapper">
+	<!-- 顶部导航 begin -->
+	<include src="../common/header.wxml" />
+	<!-- 顶部导航 end -->
+
+	<view class="nav-scroll">
+		<scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+			<text wx:for="{{section}}" wx:key="id" id="{{item.id}}" catchtap="handleTap"
+            class="nav-name {{item.id == currentId ? 'nav-hover' : ''}}"
+            style=" padding-right: 30rpx;padding-left: 30rpx">{{item.name}}</text>
+		</scroll-view>
+	</view>
+</view>
+
+<!--推荐-->
+<block wx:if="{{currentId == 1001}}">
+	<view class="slider-wrapper">
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#EA6CAF">
+			<block wx:for="{{imgUrls}}">
+				<swiper-item>
+					<navigator url="{{item.link}}" hover-class="navigator-hover">
+						<image src="{{item.url}}" class="slide-image" width="355" height="150" />
+					</navigator>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<view class="row-container">
+		<view class="header">
+			<view class="left">
+				<view class="bilibili-index-sprite bilibili-index-hot">
+					<image src="../../resources/images/tuijian1.png"></image>
+				</view>
+
+			</view>
+			<view class="right">
+				<view class="bilibili-index-sprite bilibili-index-arrow">
+					<image src="../../resources/images/gengduo.png"></image>
+				</view>
+				<text>记录生活的每一瞬间</text>
+			</view>
+		</view>
+		<view class="content-wrapper">
+			<block wx:for="{{hotList}}" wx:key="avid">
+
+				<template is="jiefItem1" data="{{...item}}" />
+			</block>
+		</view>
+	</view>
+</block>
+<!-- 推荐end -->
+
+
+<!-- 亲友圈 begin -->
+<block wx:if="{{currentId == 1002}}">
+	<view style="margin-top:180rpx;">
+		<view class="row-container">
+			<navigator class="header">
+				<view class="left">
+					<view class="bilibili-index-sprite bilibili-index-bangumi">
+						<image src="../../resources/images/fanju.png"></image>
+					</view>
+				</view>
+				<view class="right">
+					<text>天大地大,亲友最大</text>
+					<view class="bilibili-index-sprite bilibili-index-arrow">
+						<image src="../../resources/images/gengduo.png"></image>
+					</view>
+				</view>
+			</navigator>
+			<view class="content-wrapper">
+				<block wx:for="{{ bangumiList }}" wx:key="avid">
+					<template is="jiefItem3" data="{{...item}}" />
+				</block>
+			</view>
+		</view>
+	</view>
+</block>
+<!-- 亲友圈 end -->
+
+
+<!-- 闲置的世界 -->
+<block wx:if="{{currentId == 1003}}">
+	<view class="slider-wrapper">
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#EA6CAF">
+			<block wx:for="{{imgUrls}}">
+				<swiper-item>
+					<navigator url="{{item.link}}" hover-class="navigator-hover">
+						<image src="{{item.url}}" class="slide-image" width="355" height="150" />
+					</navigator>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<view class="row-container">
+		<navigator class="header">
+			<view class="left">
+				<view class="bilibili-index-sprite bilibili-index-live">
+				</view>
+				<text></text>
+			</view>
+			<view class="right">
+				<text> 舍去多余,留下心情 </text>
+				<view class="bilibili-index-sprite bilibili-index-arrow">
+					<image src="../../resources/images/gengduo.png"></image>
+				</view>
+			</view>
+		</navigator>
+		<view class="content-wrapper">
+			<block wx:for="{{ liveList }}">
+				<template is="jiefItem2" data="{{...item}}" />
+			</block>
+		</view>
+	</view>
+	<!-- 闲置 end -->
+</block>
+
+
+
+<!-- 我的动态 begin -->
+<block wx:if="{{currentId == 1004}}">
+	<view class="slider-wrapper">
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#EA6CAF">
+			<block wx:for="{{imgUrls}}">
+				<swiper-item>
+					<navigator url="{{item.link}}" hover-class="navigator-hover">
+						<image src="{{item.url}}" class="slide-image" width="355" height="150" />
+					</navigator>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<view class="row-container">
+		<navigator class="header">
+			<view class="left">
+				<view class="bilibili-index-sprite bilibili-index-live">
+				</view>
+				<text></text>
+			</view>
+			<view class="right">
+				<text> 舍去多余,留下心情 </text>
+				<view class="bilibili-index-sprite bilibili-index-arrow">
+					<image src="../../resources/images/gengduo.png"></image>
+				</view>
+			</view>
+		</navigator>
+		<view class="content-wrapper">
+			<block wx:for="{{ MyWordList }}">
+				<template is="jiefItem2" data="{{...item}}" />
+			</block>
+		</view>
+	</view>
+</block>
+
+
+
+<!--待开发  begin-->
+<block wx:if="{{currentId == 1004}}">
+
+</block>
+
+
+<view class="menu-box">
+	<view class="navbar {{ play?'active':'' }}">
+		<view class="btn" bindtap="changePlay">
+			<view class="line" animation="{{ !play?line1CloseAn:line1OpenAn }}"></view>
+			<view class="line" animation="{{ !play?line2CloseAn:line2OpenAn }}"></view>
+			<view class="title" animation="{{ !play?titleCloseAn:titleOpenAn }}">
+				菜单
+			</view>
+		</view>
+	</view>
+	<view class="menu">
+		<view animation="{{ !play?btn4Close:btn4Open }}">
+			<navigator url="/pages/publish/publish" hover-class="navigator-hover">
+				<text>发布动态</text>
+			</navigator>
+		</view>
+		<view animation="{{ !play?btn3Close:btn3Open }}">
+			<navigator url="/pages/message/message" hover-class="navigator-hover">
+				<text>消息列表</text>
+			</navigator>
+		</view>
+		<view animation="{{ !play?btn2Close:btn2Open }}">
+			<navigator url="/pages/user/user">
+				<text>个人信息</text>
+			</navigator>
+		</view>
+		<view animation="{{ !play?btn1Close:btn1Open }}">
+			<text>凑够四个</text>
+		</view>
+	</view>
+</view>

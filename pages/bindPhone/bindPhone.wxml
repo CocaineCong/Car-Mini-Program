@@ -1,0 +1,36 @@
+		<view class="container-bindphone">
+			<view class="big_title">
+				<h1 wx:if="{{ phone=='' }}">绑定手机</h1>
+				<h1 wx:elif="{{ phone!='' }}">解绑手机</h1>
+			</view>
+
+
+			<view class="todo-list" wx:if="{{ phone!='' }}">
+				<view class="todo-item">
+					<label>
+						<span style="margin-left: 150rpx;">{{ phone }}</span>
+						<span class="check-button"></span>
+						<!-- <input  placeholder="请输入验证码" type="text" /> -->
+					</label>
+				</view>
+			</view>
+
+			<view class="input-add">
+				<input wx:if="{{ phone !='' }}" placeholder="确认操作" type="text"  />
+				<input wx:if="{{ phone =='' }}" bindinput="watchPhone" placeholder="请输入手机号" type="text" />
+				<button wx:if="{{ phone=='' }}" bindtap="bindCode">获取验证码</button>
+				<button wx:elif="{{ phone!='' }}" bindtap="bindCode">获取验证码</button>
+			</view>
+
+			<view class="input-add" wx-if="{{ SeeTheCode }}">
+				<input placeholder="请输入验证码" bindinput="watchCode" type="text" name="todo" v-model="message" />
+				<button wx:if="{{ phone=='' }}" bindtap="bindPhone">绑定手机
+				</button>
+				<button wx:elif="{{ phone !='' }}" bindtap="NobindPhone">解绑手机
+				</button>
+			</view>
+
+
+
+
+		</view>

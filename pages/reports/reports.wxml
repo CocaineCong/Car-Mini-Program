@@ -1,0 +1,36 @@
+<view class="Content-Main">
+  <div class="Content-Main1">
+    <h1>用户反馈</h1>
+  </div>
+  <view action="" method="post" class="form-report">
+    <label>
+      <span>邮箱:</span>
+      <view class="option-list select2" wx:if="{{isShow}}" catchtap="optionTap">
+        <text class="option" wx:for="{{options}}" wx:for-item="item" wx:key="index" wx:for-index="index"
+          data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}
+        </text>
+      </view>
+      <input class="input" placeholder="请输入您的邮箱地址" />
+    </label>
+    <label>
+      <span>内容:</span>
+      <textarea id="mesaage" name="message" placeholder="请输入反馈内容"></textarea>
+    </label>
+    <label>
+      <span>图片:</span>
+      <view class="chose-image" bindtap="uploadImage">
+        <image src="/images/publish.png"></image>
+        <text>+图片</text>
+      </view>
+      <view class="image-list" wx:if="{{imageList.length > 0}}">
+        <view class="item" wx:for="{{imageList}}" wx:key="key">
+          <image src="{{item.path}}"></image>
+          <icon wx:if="{{item.percent==100}}" class="rm" type="clear" color="red" data-index="{{index}}"
+            data-item="{{item}}" bindtap="removeImage"></icon>
+          <progress percent="{{item.percent}}" wx:if="{{item.error}}" color="#FF0000" />
+          <progress percent="{{item.percent}}" wx:else />
+        </view>
+      </view>
+    </label>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+<div class="my_msg_list">
+  <div class="my_msg_list_view">
+    <div class="my_msg_list_box">
+      <div class="my_msg_list_con">
+        <div class="my_msg_list_title">
+          <span>消息总数：</span><span>3</span>
+          <a class="fr">清空所有消息</a>
+          <span class="line fr"></span>
+          <a class="fr">全部标记为已读</a>
+        </div>
+        <div class="msg_list">
+          <ul class="msg_list_ul">
+            <li class="msg_list_ul_li">
+              <span class="msg_type ">系统</span>
+              <span class="msg_info_box">
+                <span class="msg_title">车牌申诉</span>
+              </span>
+              <div class="fr options_info options-f">
+                <em class="data-time" style=" float: right;padding-right:10px">2020-05-28</em>
+              </div>
+              <div class="msg_content ">您的车牌申诉已成功，请稍后查看</div>
+            </li>
+            <li class="msg_list_ul_li">
+              <span class="msg_type ">系统</span>
+              <span class="msg_info_box">
+                <span class="msg_title">社区守则</span>
+              </span>
+              <div class="fr options_info options-f">
+                <em class="data-time" style="float: right;padding-right:10px">2020-05-28</em>
+              </div>
+              <div class="msg_content ">您的评论已被举报，请谨慎发言</div>
+            </li>
+            <li class="msg_list_ul_li">
+              <span class="msg_type ">系统</span>
+              <span class="msg_info_box">
+                <span class="msg_title">消息提醒</span>
+              </span>
+              <div class="fr options_info options-f">
+                <em class="data-time" style="float: right;padding-right:10px">2020-05-28</em>
+              </div>
+              <div class="msg_content ">您的车妨碍到其他同学了，麻烦进行挪动</div>
+            </li>
+          </ul>
+        </div>
+        <div class="page-box">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+<wxs module="dateUtil" src="../../utils/DataTime.wxs"></wxs>
+
+<wxs module="m1">
+function format(ts) {
+	var d = getDate(ts*1000)
+	return [d.getFullYear(), d.getMonth()+1, d.getDate()].join('-')
+		+ ' '
+		+ [d.getHours(), d.getMinutes(), d.getSeconds()].join(':')
+}
+module.exports.format = format
+</wxs>
+
+
+
+
+<view class="container-m">
+	<view class="top-view">
+		<view class="info">
+			<image class="avatar" src="{{news.user_avatar}}"></image>
+			<view class="author">
+				<text>{{news.user_name}}</text>
+				<text class="date">发布于 {{news.category_name}}</text>
+			</view>
+		</view>
+		<view class="follow">
+			<view class="btn" bindtap="onClickFollow" data-uid="{{news.user_id}}">关 注</view>
+		</view>
+	</view>
+
+
+	<view class="slide-vew">
+		<image class="image-detail" src="{{news.picture}}"></image>
+	</view>
+
+	<view class="message-view">
+		<view class="detail">{{news.content}}</view>
+		<view class="topic">
+			<view wx:if="{{news.category_name}}">#{{news.english_name}}</view>
+		</view>
+	</view>
+
+	<view class="comment">
+		<view wx:if="{{ total != '' }}">全部评论 - {{ total }} </view>
+		<view wx:elif="{{ total == '' }}">暂无评论</view>
+		<view class="tree">
+			<view class="item" wx:for="{{ comment }}" wx:key="id">
+				<image class="big-avatar" src="{{item.user_avatar}}"></image>
+				<view class="body">
+					<view class="user">
+						<view class="name">
+							<text>{{item.user_name}}</text>
+							<!-- <text>{{ dateUtil.dateFormat(item.create_at) }}</text> -->
+							<text>{{ m1.format(item.create_at) }}</text>
+						</view>
+						<view class="func">
+							<text data-news="{{news.id}}" data-reply="{{item.id}}" data-depth="{{item.depth + 1}}"
+								data-nickname="{{item.nickname}}" bindtap="onClickShowCommentModal">回复</text>
+							<text wx:if="{{item.favor}}" class="red">赞</text>
+							<text wx:else>赞</text>
+						</view>
+					</view>
+					<view class="content">
+						{{item.content}}
+					</view>
+					<view class="reply" wx:if="{{item.children}}">
+						<view class="row" wx:for="{{item.children}}" wx:key="id" wx:for-item="row">
+							<view class="reply-menu">
+								<view class="reply-user">
+									<image class="small-avatar" src="{{row.avatar}}"></image>
+									<view class="reply-name">
+										<text>{{row.nickname}}</text>
+										<text>{{row.create_date}}</text>
+									</view>
+								</view>
+								<view class="reply-func">
+									<text data-news="{{news.id}}" data-reply="{{row.id}}" data-depth="{{row.depth + 1}}"
+										data-nickname="{{row.nickname}}" bindtap="onClickShowCommentModal">回复</text>
+									<text wx:if="{{row.favor}}" class="red">赞</text>
+									<text wx:else>赞</text>
+								</view>
+							</view>
+							<view class="reply-content">{{row.content}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="buttom-view">
+	<view class="comment-area" wx:if="{{isShowCommentModal}}">
+		<view class="top">
+			<image class="big-avatar" src="{{ userInfo.avatar }}"></image>
+			<text>评论</text>
+			<view class="reply" wx:if="{{reply.reply}}">回复 {{reply.nickname}}
+				<icon type="clear" size="15" bindtap="onClickClearReply"></icon>
+			</view>
+		</view>
+		<textarea fixed="true" placeholder="评论内容..." bindinput="inputComment"></textarea>
+		<view class="btn">
+			<view class="publish" bindtap="onClickPostComment">发布</view>
+		</view>
+		<view class="hide">
+			<icon type="cancel" size="30" bindtap="onClickCancelCommentModal"></icon>
+		</view>
+	</view>
+	<view class="text-input" wx:else>
+		<image class="big-avatar" src="{{ userInfo.avatar }}"></image>
+		<input placeholder="说点什么..." bindtap="onClickShowCommentModal" data-news="{{news.id}}" data-depth="{{1}}"></input>
+	</view>
+</view>

@@ -1,0 +1,43 @@
+<view class="container-publish">
+	<view class="chose-image" bindtap="uploadImage">
+		<image src="/images/publish.png"></image>
+		<text>+图片</text>
+	</view>
+	<view class="image-list" wx:if="{{imageList.length > 0}}">
+		<view class="item" wx:for="{{imageList}}" wx:key="key">
+			<image src="{{item.path}}"></image>
+			<icon wx:if="{{item.percent==100}}" class="rm" type="clear" color="red" data-index="{{index}}" data-item="{{item}}" bindtap="removeImage"></icon>
+			<progress percent="{{item.percent}}" wx:if="{{item.error}}" color="#FF0000" />
+			<progress percent="{{item.percent}}" wx:else />
+		</view>
+	</view>
+	<view class="text">
+		<textarea placeholder=" 来呀，写下你的心情" value="{{content}}" bindinput="bindContentInput" />
+	</view>
+  
+  <view class="function-view">
+    
+		<!-- <view class="row" bindtap="getLocation">
+      <view class="left" wx:if="{{ address }}">{{address}}</view>
+      <view class="left" wx:else>请选择位置</view>
+      <view class="right">
+        <image class="go-icon" src='/images/iconsmall.png'></image>
+      </view>
+    </view> -->
+
+    <view class="row" >
+      <view class="left">{{ topicTitle }}</view>
+      <view class="right">
+        <image class="go-icon" src='/images/iconsmall.png'></image>
+      </view>
+    </view>
+
+	<view class="topic-all">
+			<view wx:for="{{ topicList }}" wx:key="topicList" class="topic-content">
+						<view data-id="{{item.id}}" class="{{item.id == idx ?'choose':'notchoose'}}" bindtap="goIndex" data-id="{{item.id}}">#{{item.category_name}}  </view>
+			</view>
+	</view>
+
+ </view>
+</view>
+<view class="publish-btn" bindtap="publishNews">发 布</view>

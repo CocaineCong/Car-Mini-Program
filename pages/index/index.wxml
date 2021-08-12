@@ -1,0 +1,84 @@
+<view class='header'>
+	<text class='title'>斗量车联</text>
+	<image src="{{ userInfo.avatar }}"></image>
+</view>
+<!--特别推荐轮播图  -->
+<view class='body'>
+	<text class='title0'>车辆的专属平台</text>
+	<text class='title2'>Do All For You</text>
+	<swiper class='imgsilder' indicator-dots="{{ indicatorDots }}" autoplay="{{autoplay}}" indicator-active-color="#FFD92E" indicator-color="#E8F0F1" interval="{{interval}}" duration="{{duration}}">
+		<block wx:for="{{imgUrls}}" wx:key="index">
+			<swiper-item>
+				<image mode='aspectFill' src="{{item}}" class="slide-image" width="355" height="200" bindtap='gotoDetail' />
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+
+<import src="/pages/template/indexPopup.wxml" />
+<template is="userPannel" data="{{isShowUserPannel}}" />
+<view class='add_symbol' bindtap='showUserPannel'></view>
+
+<view class='projectbox'>
+	<text class='headingtext'>列表菜单</text>
+	<!--第一部分  -->
+	<view class='project'>
+		<navigator url='/pages/social/social'>
+			<image class='headimage' src='http://img.zcool.cn/community/01ca005b02587ba801218cf4fe698a.gif'></image>
+			<view class='projecttext'>
+				<text class='biaoti'>论坛社区</text>
+				<text class='jianjie'>用文字的力量，改变潮水的方向</text>
+				<text class='field'>期待你的来临</text>
+			</view>
+			<view class='openpush'></view>
+		</navigator>
+	</view>
+
+	<!--第二部分  -->
+
+	<view class='project'>
+		<navigator url='/pages/friends/friends?detail={{ userInfo.id }}'>
+			<image class='headimage' src='http://img.zcool.cn/community/0130175b0259daa801209a85281b8a.gif'></image>
+			<view class='projecttext'>
+				<text class='biaoti'>我的好友</text>
+				<text class='jianjie'>复眼的世界，在亲友世界的寻找自我认识</text>
+				<text class='field'>幸好有你</text>
+			</view>
+
+			<view class='openpush'></view>
+		</navigator>
+	</view>
+
+	<!--第三部分  -->
+	<view class='project'>
+		<navigator url='/pages/message/message'>
+			<image class='headimage' src='http://img.zcool.cn/community/0110005b025a18a801218cf420ede5.gif'></image>
+			<view class='projecttext'>
+				<text class='biaoti'>对话聊天</text>
+				<text class='jianjie'>这个世界上终究会有好事发生</text>
+				<text class='field'>润茶喜爱</text>
+			</view>
+
+			<view class='openpush'></view>
+		</navigator>
+	</view>
+
+	<!--第四部分  -->
+
+	<view class='project'>
+		<navigator url='/pages/user/user'>
+			<image class='headimage' src='http://img.zcool.cn/community/0108625b025a04a801218cf4270881.gif'></image>
+			<view class='projecttext'>
+				<text class='biaoti'>个人中心</text>
+				<text class='jianjie'>每个人都有自己的故事</text>
+				<text class='field'>塑造独一无二的你</text>
+			</view>
+
+			<view class='openpush'></view>
+		</navigator>
+	</view>
+
+
+
+
+</view>

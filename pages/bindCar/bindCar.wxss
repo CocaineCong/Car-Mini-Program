@@ -1,0 +1,73 @@
+.img{
+  display: inline-block;
+}
+ 
+.pic {
+float:left;
+position:relative;
+margin-right:9px;
+margin-bottom:9px;
+}
+ 
+.delete-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+ 
+.container-car{
+  border: 1px solid black;
+  width: auto;
+  height: auto;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  padding-top: 20rpx;
+  padding-bottom: 30rpx;
+  border-radius: 30rpx;
+  /* text-align: center; */
+}
+
+.weui-uploader{
+  padding: 10rpx;
+}
+ 
+ 
+.lineHeight {
+  text-align: center;
+  width: 100%;
+  line-height: 80rpx;
+  /* border-bottom: 1px solid #ccc; */
+  /* font-size: 30rpx; */
+}
+
+.numberInfo {
+  margin-top: 150rpx;
+  text-align: center;
+  font-size: 50rpx;
+  text-indent: 15rpx;
+  margin-bottom: 50rpx;
+}
+ 
+.input {
+  display: inline-block;
+  border: 1px solid #ccc;
+  line-height: 80rpx;
+  vertical-align: middle;
+  width: auto;
+  padding: 15rpx;
+  border-radius: 20rpx;
+}
+
+ 
+button {
+  width: 100%;
+  margin-top: 30rpx;
+}
+.select{
+  margin-left: 7%;
+  color: #666;
+}
+ 
+.input-15{
+  margin-left:15%;
+}

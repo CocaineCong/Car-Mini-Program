@@ -1,0 +1,4 @@
+<!--pages/auth/auth.wxml-->
+<view wx:if="{{!hasUserInfo}}" class='userinfo_auth'>
+      <button bindtap="getUserProfile"> 授权登陆 </button>
+</view>

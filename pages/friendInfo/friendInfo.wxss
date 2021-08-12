@@ -1,0 +1,274 @@
+
+page {
+  min-height: 100vh;
+  position: relative;
+}
+
+.bg {
+  width: 750rpx;
+  height: 100%;
+  position: absolute;
+  z-index: -10;
+}
+
+/*头部盒模型  */
+
+.head {
+  display: table;
+  position: relative;
+  margin: 0 auto;
+}
+
+/*头部照片  */
+
+.headphoto {
+  width: 150rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+/*相机背景  */
+
+.photobg {
+  width: 100%;
+  height: 100%;
+}
+
+/*相机icon  */
+
+.camera {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  border: 1px solid #2f2f2f ;
+  z-index: 1;
+}
+
+/*基本信息  */
+
+.basic {
+  padding-left: 20px;
+  display: block;
+  padding-right: 40rpx;
+  width: 100%;
+  margin-top: 70rpx;
+}
+
+/*信息文本  */
+
+.basictext {
+  font-size: 30rpx;
+  color: #828282;
+  display: block;
+}
+
+.namebox {
+  width: 100%;
+  height: 60rpx;
+  border-bottom: 1rpx solid #828282;
+  margin-top: 35rpx;
+  padding-bottom: 68rpx;
+  z-index: 1px;
+}
+
+.name {
+  margin-left: 60rpx;
+  font-size: 33rpx;
+  color: #2f2f2f;
+  float: left;
+  /* left: 1; */
+
+}
+
+/* .namebox {
+  width: auto;
+  height: auto;
+  position: relative;
+} */
+
+
+.nametext {
+  font-size: 33rpx;
+  color: #828282;
+  float: right;
+  padding-right: 25rpx;
+  text-align: right;
+  z-index: 3;
+}
+
+.mode {
+  position: relative;
+  z-index: 1;
+  font-size: 33rpx;
+  color: #828282;
+  float: right;
+  padding-right: 25rpx;
+  text-align: right;
+}
+
+.field{
+  position: relative;
+  z-index: 1;
+  font-size: 33rpx;
+  color: #828282;
+  float: right;
+  padding-right: 25rpx;
+  text-align: right;
+}
+
+.nameicon {
+  width: 18rpx;
+  height: 32rpx;
+  float: right;
+  padding-top: 8rpx;
+  padding-right: 5rpx;
+}
+
+.nameicon-left {
+  vertical-align: auto;
+  /* border: 1px solid red; */
+  width: 40rpx;
+  height: 40rpx;
+  /* float: left; */
+  padding-top: 4rpx;
+  position: absolute;
+  /* left: 0em; */
+  padding-left: 10rpx;
+}
+
+.back {
+  font-size: 51rpx;
+  color: #82c6df;
+  display: block;
+  text-align: center;
+  line-height: 100rpx;
+  width: 230rpx;
+  height: 100rpx;
+  background-color: rgba(255, 255, 255, 0);
+  border: 4rpx solid #28bdf4;
+  border-radius: 25rpx;
+  position: absolute;
+  left: 44%;
+  margin-left: -65rpx;
+  bottom: 100rpx;
+}
+/*button*/  
+.btn {  
+  position: fixed;
+  width: 80%;  
+  height: 80rpx;
+  padding: 20rpx 0;  
+  border-radius: 10rpx;  
+  text-align: center;  
+  margin: 40rpx 10%;
+  top: 610rpx ;  
+  /* top: 50%; */
+  /* background:  rgb(34, 206, 237); */
+  color:   #fff; 
+}  
+ 
+.btn-phone{
+  position: fixed;
+  width: 80%;  
+  height: 80rpx;
+  padding: 20rpx 0;  
+  border-radius: 10rpx;  
+  text-align: center;  
+  margin: 40rpx 10%;
+  top: 510rpx ;  
+  /* top: 50%; */
+  background:  rgb(34, 206, 237);
+  color:   #fff; 
+}
+
+/*mask*/  
+.drawer_screen {  
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000;  
+  opacity: 0.5;  
+  overflow: hidden;  
+}  
+  
+/*content*/  
+.drawer_box {  
+  width: 650rpx;  
+  overflow: hidden;  
+  position: fixed;  
+  top: 50%;  
+  left: 0;  
+  z-index: 1001;  
+  background: #FAFAFA;  
+  margin: -150px 50rpx 0 50rpx;  
+  border-radius: 18px;  
+}  
+  
+.drawer_title{  
+  padding:15px;  
+  font: 20px "microsoft yahei";  
+  text-align: center;  
+}  
+.drawer_content {  
+  height: 180rpx;  
+  overflow-y: scroll; /*超出父盒子高度可滚动*/  
+}  
+  
+.btn_ok{  
+  padding: 10px;  
+  font: 20px "microsoft yahei";  
+  text-align: center;  
+  border-top: 1px solid #E8E8EA;  
+  color: #000000;  
+}  
+  
+.top{  
+    padding-top:20px;  
+}  
+.bottom {  
+    padding-bottom:20px;  
+}  
+.title {  
+    height: 30px;  
+    line-height: 30px;  
+    width: 160rpx;  
+    text-align: center;  
+    display: inline-block;  
+    font: 300 28rpx/30px "microsoft yahei";  
+}  
+  
+.input_base {  
+    border: 2rpx solid #ccc;  
+    padding-left: 10rpx;  
+    margin-right: 50rpx;  
+}  
+.input_h30{  
+    height: 30px;  
+    line-height: 30px;  
+}  
+.input_h60{  
+    height: 60px;  
+}  
+.input_view{  
+    font: 12px "microsoft yahei";  
+    background: #fff;  
+    color:#000;  
+    line-height: 30px;  
+}  
+  
+input {  
+    font: 12px "microsoft yahei";  
+    background: #fff;  
+    color:#000 ;  
+}  
+radio{  
+    margin-right: 20px;  
+}  
+.grid { display: -webkit-box; display: box; }  
+.col-0 {-webkit-box-flex:0;box-flex:0;}  
+.col-1 {-webkit-box-flex:1;box-flex:1;}  
+.fl { float: left;}  
+.fr { float: right;}

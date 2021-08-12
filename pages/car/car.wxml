@@ -1,0 +1,40 @@
+<view class="container-car">
+	<view wx:if="{{ total <=4 && total >0  }}">
+		<view class="row" wx:for="{{carList}}" bindtap="choseCar">
+			<image src="{{ item.car_images }}" class="car-image"></image>
+			<view class="car-num-text">车牌号:</view>
+			<view class="car-con">
+				<text class="car-num">{{item.car_num}}</text>
+				<!-- <text class="car-name">{{item.car_name}}</text> -->
+				<button data-id="{{ item.id }}" class="nobind-car" bindtap="nobindCar">解绑</button>
+			</view>
+		</view>
+		<view>
+			<view class="bind-car-bottom" wx:if="{{ total<=4 }}">
+				<text>还可以再绑定{{ 4-total }}辆车</text>
+			</view>
+			<button bindtap="send_car">绑定</button>
+		</view>
+	</view>
+
+	<view wx:elif="{{ total==0 }}" class="main">
+		<view class="cont">
+			<view class="big_title">
+				<h1>车库是空空的</h1>
+			</view>
+			<view class="filters">
+				<span class="filter active">提醒:照片必须有车牌信息且不能遮挡车牌信息</span>
+			</view>
+			<view class="filters">
+				<span class="image-upload" bindtap="chooseImage">选择图片</span>
+			</view>
+			<view class="input-add">
+				<input type="text" name="todo" v-model="message" />
+				<button bindtap="send_car">绑定
+					<!-- <i class="plus"></i> -->
+				</button>
+			</view>
+
+		</view>
+	</view>
+</view>

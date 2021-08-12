@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "充电中心",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+      "popup": "../../component/popup/popup"
+  }
+}
