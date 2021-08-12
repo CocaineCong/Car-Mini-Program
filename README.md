@@ -11,11 +11,7 @@ Golang部分 [Golang](https://github.com/CocaineCong/Car-Manage-System)
 Python部分 [Python](https://github.com/CocaineCong/Car-Yolo-FasterRcnn)
 
 
-
-![image-20210812221147691](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210812221147691.png)
-
-
-
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210602073619933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTMwNDUwMw==,size_16,color_FFFFFF,t_70)
 
 
 # 前言
